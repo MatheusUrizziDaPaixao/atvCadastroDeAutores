@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Autor</title>
+</head>
+<body>
+
+<!-- Lembrete d rodar BibliotecaAplication e colar o url:
+http://localhost:8080/Autores/novo
+O .html está abrindo na port 63342, rodando sem o thymeleaf.
+Por isso que redirecionava p si msm. (n sei como resolve) -->
+
+<h1>Cadastrar Autor</h1>
+
+<form th:object="${autor}"
+      th:action ="@{/Autores}"
+      method="post">
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome"
+           th:field="*{nome}" required>
+
+    <br><br>
+
+    <button type="submit">Cadastrar</button>
+
+</form>
+
+</body>
+</html>
